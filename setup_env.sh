@@ -1,5 +1,9 @@
 #!/bin/bash
 
+curl -LO https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+source /root/.bashrc
+
 # Create a new conda environment
 conda create -y -n latentsync python=3.10.13
 conda activate latentsync
@@ -8,6 +12,7 @@ conda activate latentsync
 conda install -y -c conda-forge ffmpeg
 
 # Python dependencies
+apt install g++
 pip install -r requirements.txt
 
 # OpenCV dependencies
